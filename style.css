@@ -1,0 +1,534 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- White: hsl(0, 0%, 100%)
+- Black: hsl(0, 0%, 0%)
+- Dark Gray: hsl(0, 0%, 55%)
+- Very Dark Gray: hsl(0, 0%, 41%)
+
+### Neutral
+
+## Typography
+
+### Body Copy
+
+- Font size: 15px
+
+### Fonts
+
+- Family: [Alata](https://fonts.google.com/specimen/Alata)
+- Weight: 400
+
+- Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+- Weight: 300 */
+
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+
+/* RESET */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+html {
+    background: #000;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 15px;
+    max-width: 1440px;
+    margin: 0 auto;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/**/
+.container {
+    max-width: 77%;
+    margin: 0 auto;
+}
+
+
+header {
+    position: relative;
+    background-image: url('images/desktop/image-hero.jpg');
+    background-repeat: no-repeat;
+    padding-bottom: 7rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8.5em;
+    padding-top: 4.3em;
+}
+
+nav ul {
+    display: flex;
+    gap: 2.3em;
+    align-items: center;
+}
+
+nav ul li a {
+    position: relative;
+    color: white;
+    font-family: 'Alata', sans-serif;
+    font-size: .81rem;
+    font-weight: 100;
+}
+
+nav ul li a::after,
+.footer-nav ul li a::after,
+.social-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 30px;
+    width: 0%;
+    margin: auto;
+    background: white;
+    height: 2px;
+    transition: .2s ease;
+}
+
+nav ul li a:hover::after,
+.footer-nav ul li a:hover::after {
+    width: 50%;
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+#close-menu {
+    display: none;
+}
+
+.title {
+    border: 2px solid white;
+    max-width: 58.7%;
+    padding: 37px 30px 37px 30px;
+}
+
+.title h1 {
+    color: white;
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+
+/*main*/
+
+main {
+    background: white;
+    padding-top: 10em;
+}
+
+#lead {
+    position: relative;
+    padding-bottom: 10em;
+}
+
+.description {
+    background: white;
+    max-width: 50%;
+    position: absolute;
+    right: 0;
+    top: 195px;
+    padding: 85px 0 0 85px;
+}
+
+.description h2 {
+    font-size: 2.68rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.description p {
+    font-family: 'Alata', sans-serif;
+    line-height: 1.5;
+    margin-top: 2em;
+    font-size: .87rem;
+    color: hsl(0, 0%, 55%);
+}
+
+
+/* Creations*/
+#creations {
+    padding-top: 3em;
+    padding-bottom: 10em;
+}
+
+.creations-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 6em;
+}
+
+.creations-title {
+    font-size: 2.8rem;
+}
+
+.creations-button {
+    background: #000;
+    color: white;
+    font-size: .85rem;
+    font-family: 'Alata', sans-serif;
+    letter-spacing: .3ch;
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.creations-button-mobile {
+    display: none;
+}
+
+.cards-top-row,
+.cards-bot-row {
+    display: flex;
+    gap: 2em;
+}
+
+.cards-top-row {
+    margin-bottom: 2em;
+}
+
+.card {
+    position: relative;
+    cursor: pointer;
+}
+
+.card::after {
+    position: absolute;
+    content: '';
+    inset: 0;
+    background: white;
+    opacity: 0;
+}
+
+.card span {
+    position: absolute;
+    color: white;
+    font-size: 1.85rem;
+    bottom: 32px;
+    left: 35px;
+}
+
+
+.soccer-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.card:hover span {
+    color: #000;
+    z-index: 999;
+}
+
+.card:hover:after {
+    opacity: .7;
+}
+
+/* Footer */
+
+footer {
+    padding-block: 40px;
+
+}
+
+.footer-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2em;
+}
+
+.logo img {
+    max-width: 30%;
+}
+
+.social-media {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1em;
+}
+
+.social-media img {
+    position: relative;
+}
+
+
+.social-link {
+    position: relative;
+    cursor: pointer;
+}
+
+.social-link:hover::after {
+    width: 100%;
+}
+
+.footer-nav ul {
+    display: flex;
+    gap: 2.5em;
+}
+
+.footer-nav ul li a {
+    position: relative;
+    color: white;
+    letter-spacing: .1ch;
+}
+
+.disclaimer {
+    display: flex;
+    justify-content: end;
+    font-family: 'Alata', sans-serif;
+    color: hsl(0, 0%, 55%);
+
+}
+
+/** mobile settings **/
+
+@media (max-width:375px) {
+
+
+    .container {
+        max-width: 90%;
+    }
+
+    nav {
+        display: block;
+        width: 100%;
+        padding-top: 3em;
+
+    }
+
+    .active {
+        display: block;
+        position: fixed;
+        z-index: 999;
+        background: #000;
+        inset: 0;
+        height: 100%;
+    }
+
+    nav[class='active'] .nav-top {
+        padding-inline: 20px;
+        margin-bottom: 9em;
+    }
+
+
+    nav[class='active'] #hamburger-menu {
+        display: none;
+    }
+
+    nav[class='active'] #close-menu,
+    nav[class='active'] .nav-menu {
+        display: block;
+    }
+
+
+    .nav-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+    }
+
+    .loop-logo {
+        max-width: 55%;
+    }
+
+    #hamburger-menu {
+        display: block;
+    }
+
+    #close-menu {
+        display: none;
+        width: 25px;
+        height: 25px;
+    }
+
+    #close-menu img {
+        width: 100%;
+    }
+
+    nav ul {
+        display: none;
+        max-width: 90%;
+        margin-inline: auto;
+        margin-top: 6em;
+    }
+
+
+
+    nav ul li a {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.75rem;
+        text-transform: uppercase;
+        opacity: .8;
+        line-height: 1.8;
+    }
+
+    header {
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding-bottom: 0rem;
+        background-image: url('images/mobile/image-hero.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+
+    .title {
+        position: absolute;
+        top: 35%;
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .title h1 {
+        font-size: 2.3rem;
+        padding-block: ;
+    }
+
+    /*main*/
+    .description {
+        position: relative;
+        max-width: 100%;
+        top: 0;
+        margin-top: 3.5em;
+        padding: 0 25px 0 25px;
+        text-align: center;
+    }
+
+    .description h2 {
+        font-size: 1.85rem;
+    }
+
+    .description p {
+        margin-top: 1em;
+    }
+
+    #lead {
+        padding-bottom: 5em;
+    }
+
+    /*creations*/
+    #creations {
+        padding-bottom: 5em;
+    }
+
+    .creations-header {
+        margin-bottom: 3em;
+    }
+
+    .creations-title {
+        margin: auto;
+        font-size: 1.85rem;
+    }
+
+    .creations-button {
+        display: none;
+    }
+
+    .cards-top-row,
+    .cards-bot-row {
+        display: block;
+    }
+
+    .card {
+        margin-bottom: 2em;
+    }
+
+    .card span {
+        font-size: 1.25rem;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .creations-button-mobile {
+        display: block;
+        text-align: center;
+        margin: auto;
+        width: 50%;
+        border: 1px solid black;
+        font-size: .85rem;
+        font-family: 'Alata', sans-serif;
+        letter-spacing: .4ch;
+        padding: 10px 40px;
+        cursor: pointer;
+    }
+
+    /* footer */
+    .footer-items {
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
+
+    .logo img {
+        max-width: 50%;
+        margin: auto;
+    }
+
+    .footer-nav ul {
+        margin-block: 1em;
+        flex-direction: column;
+        gap: 2em;
+        align-items: center;
+    }
+
+
+    .social-media {
+        justify-content: center;
+        order: 1;
+    }
+
+    .disclaimer {
+        order: 2;
+        justify-content: center;
+        margin-top: -10px;
+    }
+}
